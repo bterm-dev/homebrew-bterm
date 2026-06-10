@@ -14,8 +14,17 @@ cask "bterm-app" do
 
   app "bterm.app"
 
+  # The .app is ad-hoc signed (no Apple Developer ID / notarization yet),
+  # so Gatekeeper refuses to open it while the quarantine xattr from the
+  # download is present. Strip it on install.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/bterm.app"],
+                   sudo: false
+  end
+
   caveats <<~EOS
-    The app is ad-hoc signed (not notarized). If macOS quarantines it:
+    The app is ad-hoc signed (not notarized). If macOS still blocks it:
       xattr -dr com.apple.quarantine /Applications/bterm.app
     Link this machine for remote control with:
       bterm login
