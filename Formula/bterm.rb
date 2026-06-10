@@ -13,11 +13,11 @@ class Bterm < Formula
   on_macos do
     on_arm do
       url "https://github.com/bterm-dev/bterm-releases/releases/download/v#{version}/bterm-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "9155974808d6d90c21efd6579625ee600d18db40526bda9635e589f57bdb84f6"
+      sha256 "6d49831495f15d32d269c49c050bc3271597f3b3ed47079f5ffbfd4ac6d16057"
     end
     on_intel do
       url "https://github.com/bterm-dev/bterm-releases/releases/download/v#{version}/bterm-v#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "b98d6ad6c5ed10e2a76c14a70c349b725cd5b97766b97aac246b2bc3e9039d04"
+      sha256 "068e09fffecaeaf8c48f0fc619851a3fbd26553b385e8850a8377aef91f01ba0"
     end
   end
 
