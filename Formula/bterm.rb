@@ -1,6 +1,6 @@
-# bterm Homebrew formula (D2). Installs the FULL CLI suite — bterm (CLI),
-# bterm-serverd (daemon), bterm-login, term-tui — from the binaries-only
-# releases repo, so installing the TUI always installs the daemon (D4).
+# bterm Homebrew formula. Installs the CLI suite — bterm (CLI/TUI launcher),
+# bterm-daemon-v13 (the v13 daemon), term-tui (the UI bterm execs) — from the
+# binaries-only releases repo, so installing the CLI always installs the daemon.
 #
 # Updated by bterm-core/scripts/update-brew-formula.sh on each release
 # (rewrites `version`, urls and sha256s from the release's SHA256SUMS).
@@ -22,15 +22,15 @@ class Bterm < Formula
   end
 
   def install
-    bin.install "bterm", "bterm-serverd", "bterm-login", "term-tui"
+    bin.install "bterm", "bterm-daemon-v13", "term-tui"
   end
 
   def caveats
     <<~EOS
       Link this machine to your bterm account:
-        bterm login --relay https://relay.bterm.dev
-      Then start the daemon:
-        bterm daemon
+        bterm login
+      Then start the daemon (the CLI/app also auto-start it):
+        bterm daemon start
       Manage your terminals from anywhere at https://app.bterm.dev
     EOS
   end
