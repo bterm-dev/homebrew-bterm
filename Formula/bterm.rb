@@ -7,17 +7,17 @@
 class Bterm < Formula
   desc "Remote-controlled terminal — daemon, CLI and TUI"
   homepage "https://bterm.dev"
-  version "0.6.18"
+  version "0.6.19"
   license :cannot_represent
 
   on_macos do
     on_arm do
       url "https://github.com/bterm-dev/bterm-releases/releases/download/v#{version}/bterm-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "dcd8fff8d65d7ea075b44391ae7bbf7899ab2dfc7ba1860a7a19b6658e04c714"
+      sha256 "9ca6acd8011062e536414c947dec66c54cba3bd7cac2a7cd7efa57155a7481ff"
     end
     on_intel do
       url "https://github.com/bterm-dev/bterm-releases/releases/download/v#{version}/bterm-v#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "66e1c5219b9399c21e7c4574049b8fb1998d543d848491e8b2a145d0de7d8a8b"
+      sha256 "3121dcec3068b477b467519d5c39986032bc258856944644d833a0699ab75917"
     end
   end
 
