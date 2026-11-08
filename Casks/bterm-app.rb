@@ -18,11 +18,11 @@ cask "bterm-app" do
   # so Gatekeeper refuses to open it while the quarantine xattr from the
   # download is present. Strip it on install. NOTE: recent macOS dropped
   # `xattr -r`, so walk the bundle with find instead.
-  postflight do
-    system_command "/bin/sh",
-                   args: ["-c",
-                          "find '#{appdir}/bterm.app' -exec xattr -d com.apple.quarantine {} \\; 2>/dev/null; true"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/find",
+        args:         ["{{appdir}}/bterm.app", "-exec", "/usr/bin/xattr", "-d", "com.apple.quarantine", "{}", ";"],
+        must_succeed: false,
+        print_stderr: false
   end
 
   caveats <<~EOS
