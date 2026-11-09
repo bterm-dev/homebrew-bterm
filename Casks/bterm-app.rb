@@ -4,8 +4,8 @@
 #
 # Updated by bterm-core/scripts/update-brew-formula.sh on each release.
 cask "bterm-app" do
-  version "0.10.0"
-  sha256 "112b12a8e71d8c997d6f8b9c86ba9388144986f220ed53208abf3294e21042e5"
+  version "0.10.1"
+  sha256 "be0836cee5b63f533f39f561266e283932791166fb2d4f8d6d31fc15a115c14d"
 
   url "https://github.com/bterm-dev/bterm-releases/releases/download/v#{version}/bterm-#{version}-macos-universal.dmg"
   name "bterm"
